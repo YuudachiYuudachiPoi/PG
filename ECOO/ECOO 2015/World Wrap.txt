@@ -1,0 +1,12 @@
+f = open('C:\PG\DATA20.txt','r')
+data = f.read().split('\n')
+f.close
+
+for time in range (0,len(data)//2):
+	L = int(data[time*2])
+	W = data[time*2+1]
+	SW = W.split(' ')
+	P = []
+	while True:
+		
+	

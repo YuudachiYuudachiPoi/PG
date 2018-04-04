@@ -1,0 +1,1 @@
+f = open('C:\\Users\mcgog\OneDrive\文档\编程\编程课\Game\那.txt')
