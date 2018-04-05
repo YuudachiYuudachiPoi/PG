@@ -1,4 +1,4 @@
-f = open('C:\\Users\XiLI\OneDrive\文档\编程\ECOO\ECOO 2017\Round 1\DATA\DATA22.txt','r')
+f = open('/home/xili/PG/ECOO/ECOO 2017/Round 1/DATA/DATA22.txt','r')
 data = f.read().split('\n')
 for loop_time in range(0,10):
 	number_of_chocolates = int(data[0])
