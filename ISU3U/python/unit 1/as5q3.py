@@ -1,5 +1,6 @@
-sheep = 'black sheep'
-sheep_noise = 'Baa baa'
+sheep = 'Baa'
+sheep_noise = sheep + sheep.lower()
+sheep2 = 'balck sheep'
 
-message = sheep_noise + ' ' + sheep
+message = sheep2 + ' ' + sheep_noise
 print(message)
