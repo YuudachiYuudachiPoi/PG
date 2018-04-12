@@ -14,3 +14,6 @@ print(int_var * fake_float_var)
 #print(string_var * float_var)
 #print(string_var * string_var)
 #print(string_var + int_var)
+
+import os
+os.system('cls')
