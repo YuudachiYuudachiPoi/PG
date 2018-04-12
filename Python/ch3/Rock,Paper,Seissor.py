@@ -23,6 +23,7 @@ elif computer_choice == 'scissors' and user_choice == 'paper':
     winner = 'computer'
 else:
     winner = 'User'
+
 if winner == 'Tie':
     print('We both chose',computer_choice + ', play again.')
 else:
