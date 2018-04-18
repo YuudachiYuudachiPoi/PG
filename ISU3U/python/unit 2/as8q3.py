@@ -1,5 +1,0 @@
-print(7%3)
-print(8%5)
-print(7//3)
-print(8//5)
-print(1/10+2/10)
