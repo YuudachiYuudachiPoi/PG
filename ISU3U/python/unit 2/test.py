@@ -8,7 +8,7 @@ for n in range(-10,10):
 
 for n in range(10000000):
     num = random.randint(-10,10)
-    #print(num)
+    print(num)
     x+=num
     if num in ll:
         ll[num] += 1
