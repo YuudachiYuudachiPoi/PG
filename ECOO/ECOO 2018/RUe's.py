@@ -1,4 +1,4 @@
-f= open('E:\PG\DATA22.txt','r')
+f= open('E:\\PG\ECOO\ECOO 2018\DATA22.txt','r')
 data = f.read().split('\n')
 f.close
 
