@@ -1,4 +1,4 @@
-f= open('E:\PG\ECOO 2\DATA22.txt','r')
+f= open('E:\PG\ECOO 2\DATA21.txt','r')
 data = f.read().split('\n')
 f.close
 
@@ -20,7 +20,7 @@ for loop in range(0,10):
 
     open_day = 0
     mark = 0
-    for day in range(1,101):
+    for day in range(1,1000001):
         if day in d_box:
             for n in range(open_day+1):
                 if len(d_box[day]) != 0:
