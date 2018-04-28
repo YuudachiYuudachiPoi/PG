@@ -1,11 +1,13 @@
-data = open('people list.txt','r')
+f = open('people list.txt','r')
+data = f.read.split('/n')
+f.close
 
-
-
-
-
-
-
+people = {}
+for n in data:
+    aaa = n.split(' ')
+    name = aaa[0]
+    table = int(aaa[1])
+    people[name] = table
 
 #---------------
 import tkinter as tk
