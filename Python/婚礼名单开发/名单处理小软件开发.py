@@ -1,5 +1,5 @@
 f = open('people list.txt','r')
-data = f.read.split('/n')
+data = f.read().split('\n')
 f.close
 
 people = {}
@@ -16,6 +16,8 @@ window = tk.Tk()
 window.title('My windows')
 window.geometry('1920x1080')
 
+
+
 help = tk.Label(window,
     text='Press tap in your name.',
     bg='white',
@@ -23,16 +25,27 @@ help = tk.Label(window,
     width=15,height=2
     )
 
-search = tk.Botton(window,
+def search_people():
+    pass
+
+search = tk.BOTTOM(window,
     text='search',
     width=15,height=2,
     command = search_people
     )
 
+go_back = tk.BOTTOM(window,
+    text='go back',
+    font=('Arical',12),
+    width=15,height=2
+    )
+
+
+
 help.pack()
 search.pack()
 
-def search_people():
+
 
 
 window.mainloop()
