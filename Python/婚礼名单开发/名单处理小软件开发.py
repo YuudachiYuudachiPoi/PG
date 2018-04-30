@@ -22,19 +22,19 @@ help = tk.Label(window,
     text='Press tap in your name.',
     bg='white',
     font=('Arial',12),
-    width=15,height=2
+    width=20,height=2
     )
 
 def search_people():
     pass
 
-search = tk.BOTTOM(window,
+search = tk.Button(window,
     text='search',
-    width=15,height=2,
+    width=10,height=2,
     command = search_people
     )
 
-go_back = tk.BOTTOM(window,
+go_back = tk.Button(window,
     text='go back',
     font=('Arical',12),
     width=15,height=2
