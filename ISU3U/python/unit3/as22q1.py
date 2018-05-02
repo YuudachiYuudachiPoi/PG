@@ -42,19 +42,21 @@ if age > 16:
         while best_subject == '':
             best_subject = input('What is your best subject?(Computer, Math or Other) ').lower()
         
+        print('\nHi,',name+'.')
+
         if school == 'ncc':
             print('You are in NCC! me, too.')
         elif school == 'quinte christian' or school == 'quinte':
             print('Oh, you are in Quinte Christian. I haer it before.')
         else:
-            print('I never hear it before.')
+            print('I never hear the school before.')
 
         if best_subject == 'computer':
-            print('me, too. I like computer.')
+            print('Your are good at computer! I like computer.')
         elif best_subject == 'math':
-            print('ME,too. I like math!')
+            print('Your are good at math! I like math.')
         else:
-            print('oh, go away!')
+            print("oh, go away! I don't like",best_subject+'.')
 
 elif age < 14:
     music_like = ''
@@ -63,8 +65,8 @@ elif age < 14:
     
     if music_like == 'yes':
         music_type = input('Waht type?(Rock, Country otr other) ').lower()
-        print("I don't know much about music. I don't know what is it. ")
+        print("\nI don't know much about music. I don't know what",music_type,"is.")
 
     elif music_like == 'no':
-        print('Ok. I see.')
+        print('\nOk. I see.','See you,',name)
     
