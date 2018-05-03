@@ -18,7 +18,7 @@ while play == 'Y' or play == 'y':#确定是否玩
 		#游戏个人设置
 		custom_setting = ''#初始化个性设定
 		while not(custom_setting == 'Y' or custom_setting == 'N' or custom_setting == 'y' or custom_setting == 'n'):#是否需要个性设定
-			custom_setting = input('Do you want custom settings?(default=N)(Y or N)\n')
+			custom_setting = 'N' #input('Do you want custom settings?(default=N)(Y or N)\n')
 			if custom_setting == '':
 				custom_setting = 'N'
 			if custom_setting == 'N' or custom_setting =='n':#不需要个性设定
@@ -348,7 +348,7 @@ while play == 'Y' or play == 'y':#确定是否玩
 	
 	play = ''#初始化play数据
 	while not(play == 'Y' or play == 'N' or play == 'y' or play == 'n'):#还想再玩吗
-		play = input("Do you want to play again?(default=Y)(Y or N)\n")
+		play = 'Y' #input("Do you want to play again?(default=Y)(Y or N)\n")
 		if play == '':
 			play = 'Y'
 		if play == 'N':
