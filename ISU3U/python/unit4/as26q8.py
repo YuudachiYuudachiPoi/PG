@@ -1,4 +1,4 @@
-sum = 0
+count = 0
 for n in range(50,-3,-3):
-    sum += n
-print(sum)
+    count += 1
+print(count)
