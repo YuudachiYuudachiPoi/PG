@@ -1,4 +1,4 @@
 sum = 0
 for n in range(-12,35):
-    sum += n
+    sum += 1
 print(sum)
