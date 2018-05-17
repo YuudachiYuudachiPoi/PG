@@ -65,7 +65,7 @@ for n0 in possible_number_0:
                                 total_list.append(total)
                                 all_total.append(numbers)
                                 everythings_list.append(all_total)
-                                print(total)
+                                #print(numbers,total)
 
 biggest_total = max(total_list)
 print(biggest_total)
