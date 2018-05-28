@@ -6,14 +6,7 @@ print('Every game is worth a $5.\n')
 while money >= 5:
     computer_choice = random.choice(('rock','paper','scissors'))
 
-    #if random_choice == 0:
-    #	computer_choice = 'rock'
-    #elif random_choice == 1:
-    #	computer_choice = 'paper'
-    #else:
-    #	computer_choice = 'scissors'
 
-    #print('The computer chooses',computer_choice)
     user_choice = ''
     while (user_choice != 'rock' and
             user_choice != 'paper' and
@@ -32,6 +25,7 @@ while money >= 5:
     else:
         winner = 'User'
 
+
     if winner == 'Tie':
         print('We both chose',computer_choice + ', you got your $5 back.')
         money += 5
@@ -42,10 +36,12 @@ while money >= 5:
         money += 10
     print('You have $%.d now'%money)
 
+
     quit = ''
     while not(quit == 'yes' or quit == 'no'):
         quit = input('Do you want to quit? ').lower()
         print()
+
 
     if quit == 'yes':
         break
