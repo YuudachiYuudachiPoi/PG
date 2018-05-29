@@ -7,11 +7,11 @@ while money >= 5:
     computer_choice = random.choice(('rock','paper','scissors'))
 
 
-    user_choice = ''
+    user_choice = input('rock, paper or scissors? ').lower()
     while (user_choice != 'rock' and
             user_choice != 'paper' and
             user_choice != 'scissors'):
-        user_choice = input('rock, paper or scissors? ').lower()
+        user_choice = input('Check your spelling. ').lower()
     money -= 5
     #print('You chose',user_choice,'and the computer chose', computer_choice)
     if user_choice == computer_choice:
@@ -37,9 +37,10 @@ while money >= 5:
     print('You have $%.d now'%money)
 
 
-    quit = ''
+    quit = input('Do you want to quit? ').lower()
+    print()
     while not(quit == 'yes' or quit == 'no'):
-        quit = input('Do you want to quit? ').lower()
+        quit = input('Check your spelling. ').lower()
         print()
 
 
