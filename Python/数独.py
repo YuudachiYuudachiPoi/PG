@@ -1,5 +1,5 @@
 import time
-f = open('C:\sd2.txt','r')
+f = open('Python/sd.txt','r')
 all = f.read()
 data = all.split('\n')
 f.close
