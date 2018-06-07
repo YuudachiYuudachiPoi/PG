@@ -8,12 +8,12 @@ while eat_another:
     want_eat = ''
     while not want_eat  in candies:
         want_eat = input('Which candy would you like to eat? ')
-    num = candies.index(want_eat)
-    candies.pop(num)
+    candies.remove(want_eat)
 
     ask = ''
     while not (ask == 'yes' or ask == 'no'):
         ask = input('Would you like to eat another candy? ').lower()
+    print()
     
     if ask == 'no':
         eat_another = False
