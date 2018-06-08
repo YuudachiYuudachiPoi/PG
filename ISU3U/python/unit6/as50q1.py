@@ -1,4 +1,4 @@
-import time
+import time,os
 
 partiers = []
 time_list = {}
@@ -10,6 +10,7 @@ def get_time():
 
 def add(provide_name):
     global partiers,time_list
+    provide_name = provide_name.title()
     if provide_name in partiers:
         print(provide_name, 'alreay signed up. ')
     else:
@@ -21,7 +22,7 @@ def remove(provide_name):
     global partiers,time_list
     if provide_name in partiers:
         partiers.remove(provide_name)
-        time_list.remove(provide_name)
+        time_list.pop(provide_name)
         print('remove succesful.\n')
     else:
         print(provide_name + ' not in the list. ')
@@ -35,24 +36,34 @@ def sign_up_time(provide_name):
     if provide_name in time_list:
         print(provide_name, 'signed up at', time_list[provide_name])
     else:
-        print(provide_name + ' not in the list')
+        print(provide_name + ' not in the list. ')
 
-def order(provide_name):
-    pass
+def order(provide_number):
+    global partiers
+    try:
+        partier_nmae = partiers[provide_number-1]
+    except:
+        print('You number is unacceptable. ')
+    else:
+        print('partirer',provide_number,'is',partier_nmae+'. ')
 
 def last_one():
     global partiers
     print(partiers[-1],'is the last one')
 
 def see_if(provide_name):
-    pass
+    global partiers
+    if provide_name in partiers:
+        print(provide_name, 'is in the list. ')
+    else:
+        print(provide_name,'is not in the list. ')
 
 def replace_someone(provide_name_1,provide_name_2):
     global partiers,time_list
 
     if provide_name_1 in partiers and not provide_name_2 in partiers:
         partiers.remove(provide_name_1)
-        time_list.remove(provide_name_1)
+        time_list.pop(provide_name_1)
         print('remove succesful.\n')
 
         partiers.append(provide_name)
@@ -62,7 +73,7 @@ def replace_someone(provide_name_1,provide_name_2):
     elif  not provide_name_1 in partiers:
         print(provide_name + ' not in the list. ')
     else:
-        print('ERROR:replace_someone')
+        print('ERROR:replace_someone ')
 
 def print_name():
     global partiers
@@ -71,25 +82,33 @@ def print_name():
 
 def print_name_with_number():
     global partiers
-    for n,partier in partiers:
-        print('{:10<}'.format(partier),n+1)
+    for n,partier in enumerate(partiers):
+        print('{:<10}'.format(partier),n+1)
 
 def print_name_in_alalphabetically():
     global partiers
-    sorted_partiers = partiers.sorted()
+    sorted_partiers = partiers.copy()
+    sorted_partiers.sort()
 
     for partier in sorted_partiers:
         print(partier)
 
 def print_name_in_reverse_alalphabetically():
     global partiers
-    sorted_partiers = partiers.sorted()[::-1]
+    sorted_partiers = partiers.copy()
+    sorted_partiers.sort()
+    sorted_partiers = sorted_partiers[::-1]
 
     for partier in sorted_partiers:
         print(partier)
 
-def party_limit():
-    pass
+def party_limit(number):
+    global partiers,time_list
+
+    out_list = partiers[:-number]
+    in_list = partiers[-number:]
+    for out in out_list:
+        time_list.pop(out)
 
 def ask_name(question):
     name = input(question)
@@ -127,16 +146,17 @@ def main():
     while not( chioce in range(1,len(menu)-1) or chioce == 99 ):
         anwer = input('What is your chioce? ')
         while not anwer.isdigit():
-            anwer = input("your input isn't a number, What is your chioce")
+            anwer = input("your input isn't a number, What is your chioce? ")
         chioce =int(anwer)
-    
+        print()
+
     if chioce == 99:
         exit = True
     else:
         exit = False
     
         if chioce == 1:
-            name = ask_name('Who you wnat to add? ')
+            name = ask_name('Who you want to add? ')
             add(name)
         elif chioce == 2:
             name = ask_name('Who you want to remove? ')
@@ -147,11 +167,18 @@ def main():
             name = ask_name('Which people you want to know? ')
             sign_up_time(name)
         elif chioce == 5:
-            order() #未完成
+            number = 0
+            while not number > 0:
+                anwer = input('What is the provide number? ')
+                while not anwer.isdigit():
+                    anwer = input("your input isn't a number, What is the procide number")
+                number = int(anwer)    
+            order(number)
         elif chioce == 6:
             last_one()
         elif chioce == 7:
-            see_if() #未完成
+            name = ask_name('Which one you want to find? ')
+            see_if(name) 
         elif chioce == 8:
             name_1 = ask_name('Who you want to remove? ')
             name_2 = ask_name('Who you want to add? ')
@@ -165,11 +192,21 @@ def main():
         elif chioce == 12:
             print_name_in_reverse_alalphabetically()
         elif chioce == 13:
-            party_limit()
+            limit = 0
+            while not limit > 0:
+                anwer = input('What is the limit? ')
+                while not anwer.isdigit():
+                    anwer = input("your input isn't a number, What is the limit")
+                limit =int(anwer)
+            party_limit(limit)
     
     return exit
 
+import os
 
+os.system('cls')
 exit = False
 while not exit:
     exit = main()
+    input()
+    os.system('cls')
