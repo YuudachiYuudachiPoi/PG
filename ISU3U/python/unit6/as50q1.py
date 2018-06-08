@@ -106,7 +106,7 @@ def party_limit(number):
     global partiers,time_list
 
     out_list = partiers[:-number]
-    in_list = partiers[-number:]
+    partiers = partiers[-number:]
     for out in out_list:
         time_list.pop(out)
 
