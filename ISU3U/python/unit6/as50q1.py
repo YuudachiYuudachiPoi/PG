@@ -66,12 +66,13 @@ def replace_someone(provide_name_1,provide_name_2):
         time_list.pop(provide_name_1)
         print('remove succesful.\n')
 
-        partiers.append(provide_name)
-        time_list[provide_name] = get_time()  
+        partiers.append(provide_name_2)
+        time_list[provide_name_2] = get_time()
+        print(rovide_name_2,'signed up. ')
     elif provide_name_2 in partiers:
-        print(provide_name, 'alreay signed up ')
+        print(provide_name_2, 'alreay signed up ')
     elif  not provide_name_1 in partiers:
-        print(provide_name + ' not in the list. ')
+        print(provide_name_1 + ' not in the list. ')
     else:
         print('ERROR:replace_someone ')
 
@@ -105,8 +106,8 @@ def print_name_in_reverse_alalphabetically():
 def party_limit(number):
     global partiers,time_list
 
-    out_list = partiers[:-number]
-    partiers = partiers[-number:]
+    out_list = partiers[number:]
+    partiers = partiers[:number]
     for out in out_list:
         time_list.pop(out)
 
@@ -116,6 +117,23 @@ def ask_name(question):
         print('You did no enter anything.try angin ')
         name = input(question)
     return name
+
+def add_list():
+    global partiers,time_list
+    provide_name = ''
+    while True:
+        provide_name = ask_name('Who you want to add?(go back by enter "etc") ')
+        if provide_name == 'etc':
+            break
+        provide_name = provide_name.title()
+        if provide_name in partiers:
+            provide_name
+            print(provide_name, 'alreay signed up. ')
+        else:
+            partiers.append(provide_name)
+            time_list[provide_name] = get_time()
+            print(provide_name,'signed up. ')
+
 
 menu = ['{:>30}'.format('Menu'),
         '1...add a partier to the list (provide namae) ',
@@ -131,6 +149,7 @@ menu = ['{:>30}'.format('Menu'),
         '11..print a list of the partiers sorted alphabetically ',
         '12..print a list of the partier in reverse alphabetical order ',
         '13..set a party limit and pop off the partiers above ',
+        '14..add a list of partier to the list (provide names) ',
         '99..exit'
 ]
 
@@ -164,7 +183,7 @@ def main():
         elif chioce == 3:
             how_many()
         elif chioce == 4:
-            name = ask_name('Which people you want to know? ')
+            name = ask_name('Which people you want to know? ').title()
             sign_up_time(name)
         elif chioce == 5:
             number = 0
@@ -199,7 +218,8 @@ def main():
                     anwer = input("your input isn't a number, What is the limit")
                 limit =int(anwer)
             party_limit(limit)
-    
+        elif chioce == 14:
+            add_list()
     return exit
 
 import os
@@ -208,5 +228,5 @@ os.system('cls')
 exit = False
 while not exit:
     exit = main()
-    input()
+    input('\npress Enter to go back. ')
     os.system('cls')
