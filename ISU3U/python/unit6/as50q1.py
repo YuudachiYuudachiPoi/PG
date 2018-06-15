@@ -68,7 +68,7 @@ def replace_someone(provide_name_1,provide_name_2):
 
         partiers.append(provide_name_2)
         time_list[provide_name_2] = get_time()
-        print(rovide_name_2,'signed up. ')
+        print(provide_name_2,'signed up. ')
     elif provide_name_2 in partiers:
         print(provide_name_2, 'alreay signed up ')
     elif  not provide_name_1 in partiers:
@@ -84,7 +84,7 @@ def print_name():
 def print_name_with_number():
     global partiers
     for n,partier in enumerate(partiers):
-        print('{:<10}'.format(partier),n+1)
+        print('{:<20}'.format(partier),n+1)
 
 def print_name_in_alalphabetically():
     global partiers
@@ -142,7 +142,7 @@ menu = ['{:>30}'.format('Menu'),
         '4...when did a certain partier to sign up? (provide name) ',
         '5...who was partier 1, 2, 3, etc? (provide name) ',
         '6...who was the last partier to sign up? ',
-        '7...see if someone is someone is coming to the party (provide name) ',
+        '7...see if someone is coming to the party (provide name) ',
         '8...replace on partier with another partier (provide 2 names)',
         '9...print a list of partiers ',
         '10..print a list of partiers with their sign up number ',
@@ -190,7 +190,7 @@ def main():
             while not number > 0:
                 anwer = input('What is the provide number? ')
                 while not anwer.isdigit():
-                    anwer = input("your input isn't a number, What is the procide number")
+                    anwer = input("your input isn't a number, What is the procide number? ")
                 number = int(anwer)    
             order(number)
         elif chioce == 6:
