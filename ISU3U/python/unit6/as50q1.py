@@ -21,7 +21,7 @@ def add(provide_name):
 def remove(provide_name):
     global partiers,time_list
     if provide_name in partiers:
-        partiers.remove(provide_name)
+        partiers.remove(prljkjovide_name)
         time_list.pop(provide_name)
         print('remove succesful.\n')
     else:
