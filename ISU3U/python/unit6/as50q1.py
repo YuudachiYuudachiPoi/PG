@@ -150,6 +150,7 @@ menu = ['{:>30}'.format('Menu'),
         '12..print a list of the partier in reverse alphabetical order ',
         '13..set a party limit and pop off the partiers above ',
         '14..add a list of partier to the list (provide names) ',
+        '',
         '99..exit'
 ]
 
@@ -215,7 +216,7 @@ def main():
             while not limit > 0:
                 anwer = input('What is the limit? ')
                 while not anwer.isdigit():
-                    anwer = input("your input isn't a number, What is the limit")
+                    anwer = input("your input isn't a number, What is the limit? ")
                 limit =int(anwer)
             party_limit(limit)
         elif chioce == 14:
