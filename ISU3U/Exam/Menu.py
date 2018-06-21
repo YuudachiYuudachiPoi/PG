@@ -16,6 +16,7 @@ while choice != 'X':
     for n in menu:
         print(n)
 
+    print()
     choice = ''
     while len(choice) != 1:
         choice = input('What is your choice? ').upper()

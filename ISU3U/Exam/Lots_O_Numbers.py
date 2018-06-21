@@ -51,7 +51,8 @@ def main():
         number_go = -number_go
 
     for n in range(start,end,number_go):
-        print(n,end=' ')
+        print(n)
+        number_list.append(n)
         time.sleep(1)
     print()
     print()
@@ -71,3 +72,4 @@ def main():
         print('The average of your number is %.1f.'%average)
     except:
         print('Error')
+t

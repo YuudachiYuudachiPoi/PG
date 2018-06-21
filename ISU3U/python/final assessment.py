@@ -21,7 +21,7 @@ def add(provide_name):
 def remove(provide_name):
     global partiers,time_list
     if provide_name in partiers:
-        partiers.remove(prljkjovide_name)
+        partiers.remove(provide_name)
         time_list.pop(provide_name)
         print('remove succesful.\n')
     else:
@@ -49,7 +49,8 @@ def order(provide_number):
 
 def last_one():
     global partiers
-    print(partiers[-1],'is the last one')
+    if len(partiers) != 0:
+        print(partiers[-1],'is the last one')
 
 def see_if(provide_name):
     global partiers
@@ -122,8 +123,8 @@ def add_list():
     global partiers,time_list
     provide_name = ''
     while True:
-        provide_name = ask_name('Who you want to add?(go back by enter "etc") ')
-        if provide_name == 'etc':
+        provide_name = ask_name('Who you want to add?(go back by enter "etc") ').title()
+        if provide_name == 'Etc':
             break
         provide_name = provide_name.title()
         if provide_name in partiers:
@@ -179,7 +180,7 @@ def main():
             name = ask_name('Who you want to add? ')
             add(name)
         elif chioce == 2:
-            name = ask_name('Who you want to remove? ')
+            name = ask_name('Who you want to remove? ').title()
             remove(name)
         elif chioce == 3:
             how_many()

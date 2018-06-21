@@ -81,5 +81,3 @@ def main():
             print(len(boat_list))
         print()
         input('Pree enter to fo back to menu.')
-
-main()
