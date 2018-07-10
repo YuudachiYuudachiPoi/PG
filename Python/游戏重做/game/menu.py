@@ -1,34 +1,43 @@
 import pygame,os,time,sys
 from pygame.locals import *
 
-def make_font(message,color=(0,0,0),background = None,antialias = False):
+import read_setting as r
+import utill as u
+
+def make_font(message,color=(0,0,0),background = (100,100,100),antialias = False):
     surface = pygame.font.SysFont('arial',40).render(message,antialias,color,background)
     return surface
 
-def init_pygame(screen_size=(1280,720)):
-    pygame.mixer.pre_init(44100,16,2,8192)
-    pygame.init()   
-    pygame.display.set_caption('希理的游戏2.0')
-    pygame.mouse.set_visible(False)
-    return pygame.display.set_mode(screen_size,0,32)
-
 def main():
-    
-    screen = init_pygame()
+    screen_size = r.screen_size()
+    screen = u.init_pygame(screen_size)
 
-    start_surface = make_font('start',color=(0,0,0),background=(100,100,100))
-    exit
+    opts = ('start','setting','exit')
+    surface = []
+    for n in opts:
+        surface.append(make_font(r.language()[n]))
+    #start_surface = make_font(r.language()['start'])
+    #setting_surface = make_font(r.language()['setting'])
+    #exit_surface = make_font(r.language()['exit'])
+
+    choice = 0
     while True:
         for event in pygame.event.get():
             if event.type == QUIT:
                 sys.exit()
             if event.type == KEYDOWN:
-                if event.key == ESC:
+                if event.key == K_ESCAPE:
                     sys.exit()
-                
-        
-        screen.fill((255,255,255))
+                if event.key == K_DOWN:
+                    pass
 
+        screen.fill((255,255,255))
+        for n,i in enumerate(surface):
+            width = screen_size[0]//2-i.get_width()//2
+            height = screen_size[1]//2-i.get_height()
+            dest = (width,height)
+            screen.blit(n,dest)
+        pygame.display.update()
    
 
 
