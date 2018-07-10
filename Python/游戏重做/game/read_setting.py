@@ -8,6 +8,7 @@ def read_file():
     f.close
     for n,a in enumerate(data):
         data[n] = a.split(' ')[0]
+
     return data
 
 def language():
@@ -21,12 +22,14 @@ def language():
         language_dir['start'] = '开始'
         language_dir['setting'] = '设置'
         language_dir['exit'] = '离开'
+
     return language_dir
         
 def screen_size():
     screen = read_file()[1].split(',')
     size1 = int(screen[0])
     size2 = int(screen[1])
+    
     return (size1,size2)
 
 if __name__ == '__main__':
