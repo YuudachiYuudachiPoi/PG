@@ -1,2 +1,0 @@
-English                       #language
-1280,720                      #screen_size
