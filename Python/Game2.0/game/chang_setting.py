@@ -58,25 +58,29 @@ def main(screen):
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     flag = False
+                    break
                 
                 if event.key == K_DOWN:
                     if choice+1 < len(opts):
                         choice += 1
                     else:
                         choice = 0
+                    break
                 
                 if event.key == K_UP:
                     if choice > 0:
                         choice -= 1
                     else:
                         choice = len(opts)-1
-                
+                    break
+
                 if event.key == K_RIGHT:
                     if opt_choice+1 < len(opt_opt):
                         opt_choice += 1
                     else:
                         opt_choice = 0
                     file[choice]  = opt_opt[opt_choice]
+                    break
                 
                 if event.key == K_LEFT:
                     if opt_choice > 0:
@@ -84,10 +88,12 @@ def main(screen):
                     else:
                         opt_choice = len(opt_opt)-1
                     file[choice]  = opt_opt[opt_choice]
+                    break
                 
                 if event.key == K_RETURN:
                     if opts[choice] == 'exit':
                         flag = False
+                    break
 
         screen.fill((255,255,255))
         for n,i in enumerate(surface):
