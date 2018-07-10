@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
+import os,pygame
 
 def read_file():
     pwd = os.path.realpath(__file__)
@@ -14,15 +14,20 @@ def read_file():
 
 def language():
     language = read_file()[0]
-    language_dir = {}
     if language == 'English':
-        language_dir['start'] = 'start'
-        language_dir['setting'] = 'setting'
-        language_dir['exit'] = 'exit'
+        language_dir = {'start':'start',
+                        'setting':'setting',
+                        'exit':'exit',
+                        'language':'language',
+                        'resolution':'resolution',
+                        'full screen':'full screen'}
     elif language == 'Chinese':
-        language_dir['start'] = '开始'
-        language_dir['setting'] = '设置'
-        language_dir['exit'] = '离开'
+        language_dir = {'start':'开始',
+                        'setting':'设置',
+                        'exit':'离开',
+                        'language':'语言',
+                        'resolution':'分辨率',
+                        'full screen':'全屏'}
 
     return language_dir
         
@@ -32,6 +37,16 @@ def screen_size():
     size2 = int(screen[1])
 
     return (size1,size2)
+
+def full_screen():
+    full_screen = read_file()[2]
+    if full_screen == 'Enable':
+        mode = pygame.FULLSCREEN
+    elif full_screen == 'Disable':
+        mode = 0
+    
+    return mode
+
 
 if __name__ == '__main__':
     print(read_file())

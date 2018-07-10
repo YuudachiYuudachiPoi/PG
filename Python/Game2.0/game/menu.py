@@ -7,18 +7,14 @@ import utill as u
 import main
 import chang_setting
 
-def main():
+def main(screen):
     screen_size = r.screen_size()
-    screen = u.init_pygame(screen_size)
     language_dir = r.language()
     opts = ('start','setting','exit')
     step = len(opts) + 1
     surface = []
     for n in opts:
         surface.append(u.make_font(language_dir[n]))
-    #start_surface = u.make_font(r.language()['start'])
-    #setting_surface = u.make_font(r.language()['setting'])
-    #exit_surface = u.make_font(r.language()['exit'])
 
     choice = 0
     while True:
@@ -31,14 +27,18 @@ def main():
                 if event.key == K_DOWN:
                     if choice+1 < len(opts):
                         choice += 1
+                    else:
+                        choice = 0
                 if event.key == K_UP:
                     if choice > 0:
                         choice -= 1
+                    else:
+                        choice = len(opts)-1
                 if event.key == K_RETURN:
                     if opts[choice] == 'start':
                         main.main()
                     if opts[choice] == 'setting':
-                        chang_setting.main()
+                        chang_setting.main(screen)
                     if opts[choice] == 'exit':
                         sys.exit()
 
@@ -63,4 +63,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    screen_size = r.screen_size()
+    mode = r.full_screen()
+    screen = u.init_pygame(screen_size,mode)
+    main(screen)
