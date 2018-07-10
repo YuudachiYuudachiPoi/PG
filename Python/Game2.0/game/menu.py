@@ -39,10 +39,13 @@ def main(screen):
                         main.main()
                     if opts[choice] == 'setting':
                         chang_setting.main(screen)
+                        screen_size = r.screen_size()
+                        mode = r.full_screen()
+                        screen = u.init_pygame(screen_size,mode)
+
+                        language_dir = r.language()
                     if opts[choice] == 'exit':
                         sys.exit()
-
-
 
         screen.fill((255,255,255))
         for n,i in enumerate(surface):
@@ -50,6 +53,7 @@ def main(screen):
             height = screen_size[1]//step + n*(screen_size[1]//step)
             dest = (width,height)
             screen.blit(i,dest)
+        
         
         for n,i in enumerate(opts):
             if choice == n:

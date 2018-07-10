@@ -28,7 +28,7 @@ def write_file(file):
                '#full_screen',
                '#last_line')
     for n,i in enumerate(file):
-        message = '{:<30}{}'.format(i,remarks[n])
+        message = '{:<30}{}'.format(i,remarks[n])+'\n'
         f.write(message)
 
 
@@ -40,7 +40,10 @@ def main(screen):
     surface = []
     file = r.read_file()
     for n,i in enumerate(opts):
-        message = '{:<10}{:>10}'.format(language_dir[i]+':',file[n])
+        if i == 'exit':
+            message = '{:<10}{:>10}'.format(language_dir[i],file[n])
+        else:
+            message = '{:<10}{:>10}'.format(language_dir[i]+':',file[n])
         surface.append(u.make_font(message))
 
     choice = 0
@@ -94,7 +97,11 @@ def main(screen):
             screen.blit(i,dest)
         
         for n,i in enumerate(opts):
-            message = '{:<10}{:>10}'.format(language_dir[i]+':',file[n])
+            if i == 'exit':
+                message = '{:<10}{:>10}'.format(language_dir[i],file[n])
+            else:
+                message = '{:<10}{:>10}'.format(language_dir[i]+':',file[n])
+            
             if choice == n:
                 surface[n] = u.make_font(message,background=(100,100,100))
             else:
