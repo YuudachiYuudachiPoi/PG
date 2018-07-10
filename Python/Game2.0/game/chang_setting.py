@@ -15,8 +15,22 @@ def opt_opts(opt):
     elif opt == 'full screen':
         opt_choices = ('Enable',
                 'Disable')
-
+    elif opt == 'exit':
+        opt_choices = ('')
     return opt_choices
+
+def write_file(file):
+    pwd = os.path.realpath(__file__)
+    path_game = os.path.abspath(os.path.dirname(pwd)+os.path.sep+"..")
+    f = open(path_game+'\data\setting.txt','w')
+    remarks = ('#language',
+               '#screen_size',
+               '#full_screen',
+               '#last_line')
+    for n,i in enumerate(file):
+        message = '{:<30}{}'.format(i,remarks[n])
+        f.write(message)
+
 
 def main(screen):
     screen_size = r.screen_size()
@@ -41,28 +55,33 @@ def main(screen):
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     flag = False
+                
                 if event.key == K_DOWN:
                     if choice+1 < len(opts):
                         choice += 1
                     else:
                         choice = 0
+                
                 if event.key == K_UP:
                     if choice > 0:
                         choice -= 1
                     else:
                         choice = len(opts)-1
+                
                 if event.key == K_RIGHT:
                     if opt_choice+1 < len(opt_opt):
                         opt_choice += 1
                     else:
-                        choice = 0
+                        opt_choice = 0
                     file[choice]  = opt_opt[opt_choice]
+                
                 if event.key == K_LEFT:
                     if opt_choice > 0:
-                        choice -= 1
+                        opt_choice -= 1
                     else:
                         opt_choice = len(opt_opt)-1
                     file[choice]  = opt_opt[opt_choice]
+                
                 if event.key == K_RETURN:
                     if opts[choice] == 'exit':
                         flag = False
@@ -82,6 +101,8 @@ def main(screen):
                 surface[n] = u.make_font(message)
 
         pygame.display.update()
+    
+    write_file(file)
 
 if __name__ == '__main__':
     screen_size = r.screen_size()
