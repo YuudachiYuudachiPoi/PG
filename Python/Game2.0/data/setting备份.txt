@@ -1,4 +1,4 @@
 English                       #language
 1280,720                      #screen_size
 Disable                       #full_screen
-                              #last_lines
+                              #last_linespip

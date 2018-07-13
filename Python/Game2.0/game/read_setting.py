@@ -20,14 +20,18 @@ def language():
                         'exit':'exit',
                         'language':'language',
                         'resolution':'resolution',
-                        'full screen':'full screen'}
+                        'full screen':'full screen',
+                        'old':'use old block file',
+                        'new':'create new block file'}
     elif language == 'Chinese':
         language_dir = {'start':'开始',
                         'setting':'设置',
                         'exit':'离开',
                         'language':'语言',
                         'resolution':'分辨率',
-                        'full screen':'全屏'}
+                        'full screen':'全屏',
+                        'old':'使用旧的方块文件',
+                        'new':'制作一个新的方块文件'}
 
     return language_dir
         
