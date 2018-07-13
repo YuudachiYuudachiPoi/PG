@@ -16,7 +16,7 @@ def opt_opts(opt):
         opt_choices = ('Enable',
                 'Disable')
     elif opt == 'exit':
-        opt_choices = ('')
+        opt_choices = ('','')
     return opt_choices
 
 def write_file(file):
@@ -104,9 +104,9 @@ def main(screen):
         
         for n,i in enumerate(opts):
             if i == 'exit':
-                message = '{:<10}{:>10}'.format(language_dir[i],file[n])
+                message = '{:<15}{:>15}'.format(language_dir[i],file[n])
             else:
-                message = '{:<10}{:>10}'.format(language_dir[i]+':',file[n])
+                message = '{:<15}{:>15}'.format(language_dir[i]+':',file[n])
             
             if choice == n:
                 surface[n] = u.make_font(message,background=(100,100,100))
