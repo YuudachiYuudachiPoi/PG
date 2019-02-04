@@ -1,4 +1,4 @@
-------------------------------import time,os
+import time,os
 
 partiers = []
 time_list = {}
