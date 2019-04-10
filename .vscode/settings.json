@@ -1,4 +1,54 @@
 {
-    "python.linting.pylintEnabled": false,
-    "python.pythonPath": "C:\\Users\\mcgog\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+    "fileheader.customMade": {
+        "Author":"Howie Hong(希理)",
+        "Date":"Do not edit",
+        "LastEditors":"Howie Hong(希理)",
+        "LastEditTime":"Do not edit",
+        "Description":""
+    },
+
+    "fileheader.cursorMode": {
+        "description":"",
+        "param":"",
+        "return":""
+    },
+    "fileheader.configObj": {
+        "createFileTime": true,
+        "timeNoDetail": false,
+        "language": {
+          "languagetest": {
+            "head": "/$$",
+            "middle": " $ @",
+            "end": " $/"
+          },
+          "python":{
+            "head": "'''",
+            "middle": "",
+            "end": "'''"
+          }
+        },
+        "autoAdd": true,
+        "autoAlready": true,
+        "annotationStr": {
+          "head": "/*",
+          "middle": " * @",
+          "end": " */",
+          "use": false
+        },
+        "headInsertLine": {
+          "php": 2
+        },
+        "beforeAnnotation": {
+          "py": "#!/usr/bin/env python\n# coding=UTF-8"
+        },
+        "specialOptions": {}
+    },
+    "workbench.colorTheme": "Visual Studio Light",
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "python.linting.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 }
