@@ -50,5 +50,6 @@
     "git.autofetch": true,
     "explorer.confirmDragAndDrop": false,
     "python.linting.enabled": false,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "python.pythonPath": "C:\\Users\\mcgog\\AppData\\Local\\Microsoft\\WindowsApps\\python3.7.exe"
 }
